@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.bg_btn {
+  background-image: linear-gradient(to right top, #16e7ad, #00d9d5, #00c7f6, #00b0ff, #0094ff, #4f86ff, #8571ff, #b552fa, #a262f6, #926eef, #8677e5, #7e7ed9);
+  box-shadow: -4px 0px 32px 11px rgba(201, 160, 80, 0.2);
+}
+
+.bg_tab_active {
+  background-image: linear-gradient(to left top, #16e7ad, #00d9d5, #00c7f6, #00b0ff, #0094ff, #4f86ff, #8571ff, #b552fa, #a262f6, #926eef, #8677e5, #7e7ed9);
+}
+
+.bg_tab {
+  background: radial-gradient(circle at 100% 100%, #101010 0, #101010 9px, transparent 9px) 0% 0%/11px 11px no-repeat,
+    radial-gradient(circle at 0 100%, #101010 0, #101010 9px, transparent 9px) 100% 0%/11px 11px no-repeat,
+    radial-gradient(circle at 100% 0, #101010 0, #101010 9px, transparent 9px) 0% 100%/11px 11px no-repeat,
+    radial-gradient(circle at 0 0, #101010 0, #101010 9px, transparent 9px) 100% 100%/11px 11px no-repeat,
+    linear-gradient(#101010, #101010) 50% 50%/calc(100% - 4px) calc(100% - 22px) no-repeat,
+    linear-gradient(#101010, #101010) 50% 50%/calc(100% - 22px) calc(100% - 4px) no-repeat,
+    linear-gradient(4deg, #16E7AD 0%, #d12afb 100%);
+  border-radius: 11px;
+  padding: 2px;
+  box-sizing: border-box;
+  padding: 16px 24px;
+}
+
+
+
+.bg_main {
+  background-image: linear-gradient(to bottom right, #101010, #0c0c0c);
+  width: 100%;
+  background-position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+#scroll_none::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll_none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+
+/* .bg_card_grident {
+  background-image: url('/images/box-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.launchpad_card_bg {
+  background-image: linear-gradient(#0A2D1C, #05180f00);
+  width: 100%;
+  border-radius: 16px;
+}
+
+.launchpad_bg {
+  background-image: linear-gradient(#0A2D1C, #05180f00);
+  width: 100%;
+  border-radius: 16px;
+} */
+
+
+
+.active {
+  background-image: linear-gradient(#7E7ED9, #16E7AD);
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  position: absolute;
+  left: 0;
+  transform: translateX(-6px);
+}
+
+@media screen and (max-width: 480px) {
+  .buynow img {
+    width: 100%;
+    height: 50px;
+  }
+}
