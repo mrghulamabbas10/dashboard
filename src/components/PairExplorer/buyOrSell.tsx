@@ -112,7 +112,7 @@ export default function BuyOrSell() {
           <p> 100%</p>
         </div>
       </div>
-      <button className='bg-[#292929] hover:bg-gradient-to-r from-purple-700 to-pink-500 rounded-[10px] py-3  w-full transition-transform transform-gpu hover:scale-105 '>
+      <button className='bg-[#292929] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105  rounded-[10px] py-3  w-full '>
         Total (USDT)
       </button>
       <div className='flex justify-between items-center'>

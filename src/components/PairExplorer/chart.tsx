@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -8,12 +9,22 @@ import { PiArrowDownLeftFill } from 'react-icons/pi'
 export default function Chart() {
   return (
     <div>
-      <iframe
-        style={{ marginBottom: '0px', marginTop: '30px', border: ' none' }}
-        width='100%'
-        height='400'
-        src='https://dexscreener.com/solana/879f697iudjgmevrkrcnw21fcxiaeljk1ffsw2atebce?embed=1&theme=dark'
-      ></iframe>
+      <div className='relative'>
+        <iframe
+          style={{ marginBottom: '0px', marginTop: '30px', border: ' none' }}
+          width='100%'
+          height='400'
+          src='https://dexscreener.com/solana/879f697iudjgmevrkrcnw21fcxiaeljk1ffsw2atebce?embed=1&theme=dark'
+        ></iframe>
+        <div className='relative w-full h-10 -translate-y-9  '>
+          <Image
+            src='/images/tracked-by-solscreener.png'
+            alt='logo main'
+            fill
+            objectFit='cover'
+          />
+        </div>
+      </div>
       <div className='mt-10'>
         <div className='flex justify-between'>
           <h3 className='text-[#B1AFCD]'>TRANSACTIONS </h3>

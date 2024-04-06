@@ -38,19 +38,19 @@ export default function UpcomingProjects() {
         <div className='flex items-center gap-1'>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <FaTelegramPlane className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <IoLogoTwitter className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <TfiWorld className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
@@ -64,25 +64,25 @@ export default function UpcomingProjects() {
         <div className='flex items-center gap-1'>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <FaTelegramPlane className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <IoLogoTwitter className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <TfiWorld className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
         </div>
       </div>
-      <div className='bg-[#101010] rounded-[10px] px-3 py-2 flex justify-between'>
+      <div className='bg-[#101010]   rounded-[10px] px-3 py-2 flex justify-between'>
         <div className='flex  items-center text-primary gap-2.5'>
           <BNBIcon />
           <p>BNB (314)</p>
@@ -90,19 +90,19 @@ export default function UpcomingProjects() {
         <div className='flex items-center gap-1'>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <FaTelegramPlane className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <IoLogoTwitter className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] w-[17px] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 h-[17px] rounded-full flex items-center justify-center '
           >
             <TfiWorld className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
@@ -116,19 +116,19 @@ export default function UpcomingProjects() {
         <div className='flex items-center gap-1'>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
-            <FaTelegramPlane className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
+            <FaTelegramPlane className='text-[#FFFFFF80] text-[6px] -ml-0.5 ' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <IoLogoTwitter className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>
           <Link
             href=''
-            className='bg-[#1F1F1F] w-[17px] h-[17px] rounded-full flex items-center justify-center '
+            className='bg-[#1F1F1F] hover:bg-gradient-to-r from-purple-700 to-pink-500 transition-transform transform-gpu hover:scale-105 w-[17px] h-[17px] rounded-full flex items-center justify-center '
           >
             <TfiWorld className='text-[#FFFFFF80] text-[6px] -ml-0.5' />
           </Link>

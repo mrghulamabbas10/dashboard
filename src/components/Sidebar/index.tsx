@@ -107,13 +107,21 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className='flex items-center justify-between gap-2  py-5.5 lg:py-6.5'>
-        <button
+      <div className='flex items-center justify-between gap-2  py-6 px-8 w-full'>
+        <div className='relative w-full md:h-10 h-8'>
+          <Image
+            src='/images/logo_main.png'
+            alt='logo main'
+            fill
+            objectFit='contain'
+          />
+        </div>
+        {/* <button
           ref={trigger}
           onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-controls='sidebar'
           aria-expanded={sidebarOpen}
-          className='block lg:hidden mr-5 z-[99999] absolute right-0 top-10'
+          className='block lg:hidden mr-5 absolute right-0 '
         >
           <svg
             className='fill-current'
@@ -128,7 +136,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               fill='#fff'
             />
           </svg>
-        </button>
+        </button> */}
       </div>
       {/* <!-- SIDEBAR HEADER --> */}
 
