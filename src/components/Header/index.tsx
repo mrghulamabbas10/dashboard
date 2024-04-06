@@ -10,37 +10,15 @@ const Header = (props: {
   setSidebarOpen: (arg0: boolean) => void
 }) => {
   return (
-    <header className=' relative top-0 z-[999] flex w-full drop-shadow-1 md:px-10 px-5 text-white mt-14 '>
-      <div className='absolute top-[-2.5rem] lg:hidden'>
-        <button
-          aria-controls='sidebar'
-          onClick={(e) => {
-            e.stopPropagation()
-            props.setSidebarOpen(!props.sidebarOpen)
-          }}
-          className='z-99999 block rounded-sm border border-stroke bg-transparent p-1.5 shadow-sm lg:hidden'
-        >
-          <svg
-            stroke='currentColor'
-            fill='#fff'
-            stroke-width='0'
-            viewBox='0 0 16 16'
-            height='1em'
-            width='1em'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path d='M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z'></path>
-          </svg>
-        </button>
-      </div>
+    <header className=' relative top-0 z-[999] flex w-full drop-shadow-1 md:px-10 px-5 text-white md:mt-14 mt-0 md:bg-transparent bg-black py-5 '>
       <div className='flex flex-grow items-center justify-between  '>
-        <div className='flex items-start justify-between flex-wrap w-full gap-5'>
+        <div className='flex items-start justify-between flex-wrap w-full gap-5 md:flex-row flex-col-reverse'>
           <div>
             <div className='flex items-center gap-[18px]'>
               <h3 className='md:text-[31.01px] text-base font-medium'>
                 Pair Explorer
               </h3>
-              <div className='flex items-center gap-2 px-5 py-3 bg-black rounded-full justify-center'>
+              <div className='flex items-center gap-2 px-2 md:py-3 py-1.5 md:bg-black bg-primary rounded-full justify-center'>
                 <svg
                   width='14'
                   height='17'
@@ -53,18 +31,22 @@ const Header = (props: {
                     fill='#F1AB00'
                   />
                 </svg>
-                <p className='text-[#808080] text-sm'>ETH Chain</p>
-                <MdKeyboardArrowDown className='text-[#808080] ' />
+                <p className='md:text-[#808080] text-white md:text-sm text-[9px] whitespace-nowrap'>
+                  ETH Chain
+                </p>
+                <MdKeyboardArrowDown className='md:text-[#808080] text-white ' />
               </div>
               <p className='text-[#808080] text-sm '>ETH: $334.47</p>
             </div>
-            <p className='text-[#808080] text-sm mt-1'>
+            <p className='text-[#808080] text-sm md:mt-1 mt-2 md:text-start text-center'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </div>
           <div className='flex items-center md:gap-10 md:justify-start justify-between md:w-auto w-full'>
             <div className='flex items-center gap-2.5 cursor-pointer'>
-              <p className='text-[#808080] text-sm mt-1'>Dark mood</p>
+              <p className='text-[#808080] text-sm mt-1 md:block hidden'>
+                Dark mood
+              </p>
               <svg
                 width='39'
                 height='25'
@@ -114,7 +96,31 @@ const Header = (props: {
                   </defs>
                 </svg>
               </Link>
-              <button className='bg_btn px-5 py-2 rounded-full'>Connect</button>
+              <button className='bg_btn px-5 py-2 rounded-full transition-transform transform-gpu hover:scale-105'>
+                Connect
+              </button>
+              <div className='lg:hidden'>
+                <button
+                  aria-controls='sidebar'
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    props.setSidebarOpen(!props.sidebarOpen)
+                  }}
+                  className='z-99999 block rounded-sm border border-stroke bg-transparent p-1.5 shadow-sm lg:hidden'
+                >
+                  <svg
+                    stroke='currentColor'
+                    fill='#fff'
+                    stroke-width='0'
+                    viewBox='0 0 16 16'
+                    height='1em'
+                    width='1em'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path d='M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z'></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>

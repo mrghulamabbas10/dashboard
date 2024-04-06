@@ -6,6 +6,8 @@ import Tabs from './tabs'
 import ChartHead from './chartHead'
 import CandlestickChart from './chart'
 import BuyOrSell from './buyOrSell'
+import OpenOrders from './OpenOrders'
+import UpcomingProjects from './UpcomingProjects'
 
 export default function Index() {
   return (
@@ -20,16 +22,18 @@ export default function Index() {
         />
       </div> */}
       <TopSlide />
-      <div className='grid grid-cols-12 my-10 gap-5'>
+      <div className='grid grid-cols-12 my-10 md:gap-10 gap-0 '>
         <div className='md:col-span-8 col-span-12'>
           <Tabs />
           <div className='mt-8'>
             <ChartHead />
-            {/* <CandlestickChart /> */}
+            <CandlestickChart />
           </div>
         </div>
         <div className='md:col-span-4 col-span-12'>
           <BuyOrSell />
+          <OpenOrders />
+          <UpcomingProjects />
         </div>
       </div>
     </div>

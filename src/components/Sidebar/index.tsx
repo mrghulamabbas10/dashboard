@@ -102,7 +102,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-50 flex h-screen w-[237px] flex-col justify-center overflow-y-hidden bg-black duration-300 ease-linear k lg:static lg:translate-x-0 ${
+      className={`absolute left-0 top-0 z-[999999] flex h-screen w-[237px] flex-col justify-center overflow-y-hidden bg-black duration-300 ease-linear k lg:static lg:translate-x-0 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
@@ -113,7 +113,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           onClick={() => setSidebarOpen(!sidebarOpen)}
           aria-controls='sidebar'
           aria-expanded={sidebarOpen}
-          className='block lg:hidden mr-5 absolute right-0 top-10'
+          className='block lg:hidden mr-5 z-[99999] absolute right-0 top-10'
         >
           <svg
             className='fill-current'
@@ -150,7 +150,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li key={index}>
                 <Link
                   href={item.urlPath}
-                  className={`flex items-center px-8 py-1 gap-5 text-sm relative  ${
+                  className={`flex items-center px-8 py-1 gap-5 text-sm relative whitespace-nowrap ${
                     pathname === item.urlPath ? ' text-white' : 'text-[#888490]'
                   }`}
                 >

@@ -57,7 +57,7 @@ export default function Tabs() {
               <span className='text-3xl'>{item.icon}</span>
               <div>
                 <h4 className='text-white text-lg font-medium'>{item.price}</h4>
-                <p className='text-white'>{item.title}</p>
+                <p className='text-gray text-end'>{item.title}</p>
               </div>
             </div>
           </Link>

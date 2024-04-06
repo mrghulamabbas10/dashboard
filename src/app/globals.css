@@ -22,6 +22,10 @@ body {
   background-image: linear-gradient(to left top, #16e7ad, #00d9d5, #00c7f6, #00b0ff, #0094ff, #4f86ff, #8571ff, #b552fa, #a262f6, #926eef, #8677e5, #7e7ed9);
 }
 
+.bg_table {
+  background-image: linear-gradient(to left, #16e7ad, #00d9d5, #00c7f6, #00b0ff, #0094ff, #4f86ff, #8571ff, #b552fa, #a262f6, #926eef, #8677e5, #7e7ed9);
+}
+
 .bg_tab {
   background: radial-gradient(circle at 100% 100%, #101010 0, #101010 9px, transparent 9px) 0% 0%/11px 11px no-repeat,
     radial-gradient(circle at 0 100%, #101010 0, #101010 9px, transparent 9px) 100% 0%/11px 11px no-repeat,
@@ -82,7 +86,14 @@ body {
   border-radius: 16px;
 } */
 
+.bg_btn__main {
+  box-shadow: -4px 0px 32px 11px #7e7ed94b;
+  background-image: linear-gradient(to right, #7E7ED9, #D12AFB);
+}
 
+.custom-0 {
+  display: none !important;
+}
 
 .active {
   background-image: linear-gradient(#7E7ED9, #16E7AD);

@@ -7,7 +7,7 @@ import { FaRegWindowMinimize } from 'react-icons/fa6'
 
 export default function BuyOrSell() {
   return (
-    <div className='bg-[#1C1C1C] shadow-2xl px-7 py-4 rounded-[10px] flex flex-col gap-3'>
+    <div className='bg-[#1C1C1C] shadow-2xl px-7 py-4 rounded-[10px] flex flex-col gap-3 md:mt-0 mt-10'>
       <div className='flex items-center border-2 border-white border-opacity-5 rounded-[10px] py-1.5 px-3'>
         <Link
           href=''
@@ -41,7 +41,7 @@ export default function BuyOrSell() {
         </div>
         <input
           type='search'
-          className='block bg-transparent placeholder:text-white  w-full p-4 pl-28 text-sm text-gray-900 rounded-[10px] outline-none '
+          className='block bg-transparent placeholder:text-white  w-full p-4 pr-10 pl-28 text-sm text-gray-900 rounded-[10px] outline-none '
           placeholder='Search'
         />
         <button
@@ -62,7 +62,7 @@ export default function BuyOrSell() {
         </div>
         <input
           type='search'
-          className='block bg-transparent placeholder:text-white  w-full p-4 pl-[120px] text-sm text-gray-900 rounded-[10px] outline-none '
+          className='block bg-transparent placeholder:text-white  w-full pr-10 p-4 pl-[120px] text-sm text-gray-900 rounded-[10px] outline-none '
           placeholder='0.60'
         />
         <button
@@ -83,7 +83,7 @@ export default function BuyOrSell() {
         </div>
         <input
           type='search'
-          className='block bg-transparent placeholder:text-[#707070] w-full p-4 pl-20 text-sm text-gray-900 rounded-[10px] outline-none '
+          className='block bg-transparent placeholder:text-[#707070] w-full p-4 pl-20 pr-10 text-sm text-gray-900 rounded-[10px] outline-none '
           placeholder='Amount (COLLAR)'
         />
         <button
@@ -112,8 +112,29 @@ export default function BuyOrSell() {
           <p> 100%</p>
         </div>
       </div>
-      <button className='bg-[] rounded-[10px] py-3  w-full'>
+      <button className='bg-[#292929] hover:bg-gradient-to-r from-purple-700 to-pink-500 rounded-[10px] py-3  w-full transition-transform transform-gpu hover:scale-105 '>
         Total (USDT)
+      </button>
+      <div className='flex justify-between items-center'>
+        <span>Avbl</span>
+        <div className='flex items-center gap-2'>
+          1.36233304 USDT{' '}
+          <svg
+            width='14'
+            height='14'
+            viewBox='0 0 14 14'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M7 0C3.1325 0 0 3.1325 0 7C0 10.8675 3.1325 14 7 14C10.8675 14 14 10.8675 14 7C14 3.1325 10.8675 0 7 0ZM10.5 7.7H7.7V10.5H6.3V7.7H3.5V6.3H6.3V3.5H7.7V6.3H10.5V7.7Z'
+              fill='#F7BC17'
+            />
+          </svg>
+        </div>
+      </div>
+      <button className='bg_btn__main rounded-full py-3  w-full mt-2 transition-transform transform-gpu hover:scale-105'>
+        Buy TBULL
       </button>
     </div>
   )
