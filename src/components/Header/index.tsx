@@ -18,29 +18,79 @@ const Header = (props: {
               <h3 className='md:text-[31.01px] text-base font-medium'>
                 Pair Explorer
               </h3>
-              <div className='flex items-center gap-2 px-2 md:py-3 py-1.5 md:bg-black bg-primary rounded-full justify-center'>
+              <div className='flex items-center gap-2 px-2 md:py-3 md:px-4 py-1.5 md:bg-black bg-primary rounded-full justify-center'>
                 <svg
-                  width='14'
-                  height='17'
-                  viewBox='0 0 14 17'
+                  width='17'
+                  height='13'
+                  viewBox='0 0 17 13'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
                 >
                   <path
-                    d='M8.57925 14.1145V16.0232L6.97606 17L5.42075 16.0232V14.1145L6.97606 15.0913L8.57925 14.1145ZM0 7.51967L1.5553 8.49724V11.7695L4.24249 13.4308V15.3355L0 12.7463V7.51967ZM13.9529 7.51967V12.7463L9.66325 15.3355V13.4308L12.3497 11.7695V8.49724L13.9529 7.51967ZM9.66325 4.93119L11.2657 5.90797V7.81349L8.57925 9.47403V12.7935L7.02319 13.7703L5.46788 12.7935V9.47403L2.68719 7.81349V5.90797L4.28962 4.93119L6.97606 6.59173L9.66325 4.93119ZM2.68719 9.18099L4.24249 10.1578V12.0625L2.68719 11.0857V9.18099ZM11.2657 9.18099V11.0857L9.71038 12.0625V10.1578L11.2657 9.18099ZM1.5553 3.27302L3.16078 4.24744L1.55758 5.22423V7.12896L0.00228041 6.15217V4.24744L1.5553 3.27302ZM12.3968 3.27302L14 4.2498V6.15453L12.3968 7.13132V5.22423L10.8385 4.24744L12.3968 3.27302ZM6.97606 3.27302L8.57925 4.2498L6.97606 5.22659L5.42075 4.2498L6.97606 3.27302ZM6.97606 0L11.2657 2.58927L9.71038 3.56605L7.02319 1.90237L4.28658 3.56369L2.73128 2.58691L6.97606 0Z'
-                    fill='#F1AB00'
+                    d='M2.69592 9.92394C2.79741 9.8225 2.93506 9.76556 3.07854 9.76556H16.3177C16.5589 9.76556 16.6796 10.0572 16.509 10.2276L13.893 12.8416C13.7915 12.943 13.6538 13 13.5103 13H0.271182C0.0300046 13 -0.0907086 12.7084 0.0798922 12.5379L2.69592 9.92394Z'
+                    fill='url(#paint0_linear_65_2)'
                   />
+                  <path
+                    d='M2.69592 0.158392C2.79741 0.0569696 2.93506 0 3.07854 0H16.3177C16.5589 0 16.6796 0.291635 16.509 0.462115L13.893 3.07606C13.7915 3.17746 13.6538 3.23444 13.5103 3.23444H0.271182C0.0300046 3.23444 -0.0907086 2.94283 0.0798922 2.77236L2.69592 0.158392Z'
+                    fill='url(#paint1_linear_65_2)'
+                  />
+                  <path
+                    d='M13.893 5.01006C13.7915 4.90866 13.6538 4.85168 13.5103 4.85168H0.271182C0.0300046 4.85168 -0.0907086 5.14333 0.0798922 5.31377L2.69592 7.92775C2.79741 8.02915 2.93506 8.08613 3.07854 8.08613H16.3177C16.5589 8.08613 16.6796 7.79449 16.509 7.62401L13.893 5.01006Z'
+                    fill='url(#paint2_linear_65_2)'
+                  />
+                  <defs>
+                    <linearGradient
+                      id='paint0_linear_65_2'
+                      x1='11.2151'
+                      y1='-3.56598'
+                      x2='2.05244'
+                      y2='13.9842'
+                      gradientUnits='userSpaceOnUse'
+                    >
+                      <stop stop-color='#00FFA3' />
+                      <stop
+                        offset='1'
+                        stop-color='#DC1FFF'
+                      />
+                    </linearGradient>
+                    <linearGradient
+                      id='paint1_linear_65_2'
+                      x1='11.2151'
+                      y1='-3.56597'
+                      x2='2.05244'
+                      y2='13.9842'
+                      gradientUnits='userSpaceOnUse'
+                    >
+                      <stop stop-color='#00FFA3' />
+                      <stop
+                        offset='1'
+                        stop-color='#DC1FFF'
+                      />
+                    </linearGradient>
+                    <linearGradient
+                      id='paint2_linear_65_2'
+                      x1='11.2151'
+                      y1='-3.56598'
+                      x2='2.05244'
+                      y2='13.9842'
+                      gradientUnits='userSpaceOnUse'
+                    >
+                      <stop stop-color='#00FFA3' />
+                      <stop
+                        offset='1'
+                        stop-color='#DC1FFF'
+                      />
+                    </linearGradient>
+                  </defs>
                 </svg>
+
                 <p className='md:text-[#808080] text-white md:text-sm text-[9px] whitespace-nowrap'>
-                  ETH Chain
+                  Sol Chain
                 </p>
                 <MdKeyboardArrowDown className='md:text-[#808080] text-white ' />
               </div>
-              <p className='text-[#808080] text-sm '>ETH: $334.47</p>
+              <p className='text-[#808080] text-sm '>SOL: $175.13</p>
             </div>
-            <p className='text-[#808080] text-sm md:mt-1 mt-2 md:text-start text-center'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
           </div>
           <div className='flex items-center md:gap-10 md:justify-start justify-between md:w-auto w-full'>
             <div className='flex items-center gap-2.5 cursor-pointer'>

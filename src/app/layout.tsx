@@ -11,8 +11,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Opex',
-  description: 'Opex',
+  title: 'Dashboard',
+  description: 'Dashboard',
 }
 
 export default function RootLayout({
