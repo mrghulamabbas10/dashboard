@@ -13,7 +13,7 @@ const Header = (props: {
 
   const tabs = ['Buy']
   return (
-    <header className='md:bg-transparent bg-white  relative top-0 z-[999] flex justify-between px-4  gap-5 w-full drop-shadow-1 md:px-10 py-5 '>
+    <header className='md:bg-transparent bg-white  relative top-0 z-40 flex justify-between px-4  gap-5 w-full drop-shadow-1 md:px-10 py-5 '>
       {tabs.map((tab) => (
         <button
           key={tab}

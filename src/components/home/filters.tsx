@@ -4,6 +4,13 @@ import { CiSearch } from 'react-icons/ci'
 import { PiCurrencyDollarBold } from 'react-icons/pi'
 import { IoChevronDown } from 'react-icons/io5'
 import FiltersIcon from '../assets/filtersIcon'
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogActions from '@mui/material/DialogActions'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
+import DialogTitle from '@mui/material/DialogTitle'
+import FilterPopup from './filterPopup'
 
 export interface FilterValues {
   searchTerm: string
@@ -21,6 +28,7 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
   const [sellprice, setPrice] = useState('')
   const [propertyType, setPropertyType] = useState('')
   const [filters, setFilters] = useState('')
+  const [open, setOpen] = React.useState(false)
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
@@ -52,19 +60,17 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
     })
   }
 
-  const handleFiltersChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFilters(e.target.value)
-    onFilterChange({
-      searchTerm,
-      sellprice,
-      propertyType,
-      filters: e.target.value,
-    })
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
   }
 
   return (
     <div className='flex mt-4'>
-      <form className='w-full mx-auto flex gap-5 flex-wrap'>
+      <div className='w-full mx-auto flex gap-5 flex-wrap'>
         <div className='md:w-auto w-full'>
           <label
             htmlFor='default-search'
@@ -127,26 +133,35 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
           </span>
         </div>
         <div className='md:w-auto w-full'>
-          <label
-            htmlFor='default-search'
-            className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'
+          <button
+            onClick={handleClickOpen}
+            className='md:w-[200px] w-full flex items-center justify-between  border border-gray-300 text-[#B7BFC5] text-sm py-3 px-5 rounded-full'
           >
             Filters
-          </label>
-          <div className='relative'>
-            <input
-              className='block w-full py-3 px-6 outline-none text-sm text-[#B7BFC5] border border-[#B7BFC5] rounded-full'
-              placeholder='Filters'
-            />
-            <button
-              type='submit'
-              className='text-white absolute right-5 top-2.5'
-            >
-              <FiltersIcon />
-            </button>
-          </div>
+            <FiltersIcon />
+          </button>
         </div>
-      </form>
+      </div>
+      <React.Fragment>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby='alert-dialog-title'
+          aria-describedby='alert-dialog-description'
+          maxWidth='sm'
+          fullWidth
+          sx={{ mx: 'auto' }}
+        >
+          <DialogTitle id='alert-dialog-title'>
+            <h3 className='text-[#181818] text-center font-bold f'>Filters</h3>
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id='alert-dialog-description'>
+              <FilterPopup />
+            </DialogContentText>
+          </DialogContent>
+        </Dialog>
+      </React.Fragment>
     </div>
   )
 }

@@ -10,6 +10,7 @@ import { Avatar } from '@mui/material'
 import SettingIcon from '../assets/SettingIcon'
 import { FaHouseUser } from 'react-icons/fa'
 import { MdOutlineApartment } from 'react-icons/md'
+import { IoMdCloseCircleOutline } from 'react-icons/io'
 
 const SIDEBAR_DATA = [
   {
@@ -45,7 +46,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const trigger = useRef<any>(null)
   const sidebar = useRef<any>(null)
 
-  let storedSidebarExpanded = 'true'
+  const storedSidebarExpanded = localStorage.getItem('sidebar-expanded')
 
   const [sidebarExpanded, setSidebarExpanded] = useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true'
@@ -53,29 +54,29 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   // close on click outside
   useEffect(() => {
-    const clickHandler = ({ target }: MouseEvent) => {
+    const clickHandler = (event: MouseEvent) => {
       if (!sidebar.current || !trigger.current) return
       if (
-        !sidebarOpen ||
-        sidebar.current.contains(target) ||
-        trigger.current.contains(target)
+        sidebar.current.contains(event.target) ||
+        trigger.current.contains(event.target)
       )
         return
       setSidebarOpen(false)
     }
     document.addEventListener('click', clickHandler)
     return () => document.removeEventListener('click', clickHandler)
-  })
+  }, [sidebarOpen, setSidebarOpen])
 
   // close if the esc key is pressed
   useEffect(() => {
-    const keyHandler = ({ key }: KeyboardEvent) => {
-      if (!sidebarOpen || key !== 'Escape') return
-      setSidebarOpen(false)
+    const keyHandler = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSidebarOpen(false)
+      }
     }
     document.addEventListener('keydown', keyHandler)
     return () => document.removeEventListener('keydown', keyHandler)
-  })
+  }, [setSidebarOpen])
 
   useEffect(() => {
     localStorage.setItem('sidebar-expanded', sidebarExpanded.toString())
@@ -89,10 +90,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute rounded-2xl left-0 top-0 z-[999999] flex h-[100vh] w-[237px] flex-col justify-center overflow-y-hidden bg-[#181818] duration-300 ease-linear lg:static lg:translate-x-0 m-2 ${
+      className={`absolute rounded-2xl left-0 top-0 z-50 flex h-[100vh] w-[237px] flex-col justify-center overflow-y-hidden bg-[#181818] duration-300 ease-linear lg:static lg:translate-x-0 m-2 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-[109%]'
       }`}
     >
+      <span
+        className='md:hidden block absolute top-5 right-5 text-white text-xl cursor-pointer bg-slate-200 rounded-full bg-opacity-5'
+        onClick={(e) => {
+          setSidebarOpen(false)
+        }}
+      >
+        <IoMdCloseCircleOutline />
+      </span>
       {/* <!-- SIDEBAR HEADER --> */}
       <div className='flex items-center justify-between gap-2 py-6 px-8 w-full text-white'>
         <div className='space-y-3 text-center flex flex-col justify-center items-center'>
@@ -126,6 +135,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       ? 'text-white bg-[#030303]'
                       : 'text-[#888490]'
                   }`}
+                  onClick={() => setSidebarOpen(false)} // Close sidebar when a link is clicked
                 >
                   <span
                     className={`${

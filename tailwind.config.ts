@@ -7,6 +7,9 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['"Quicksand"', 'sans-serif'],
+    },
     extend: {
       colors: {
         gray: '#808080',
