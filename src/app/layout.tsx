@@ -11,8 +11,8 @@ const quicksand = Quicksand({
 })
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
-  description: 'Dashboard',
+  title: 'Dreamz Dashbard',
+  description: 'Dreamz Dashbard',
 }
 
 export default function RootLayout({
