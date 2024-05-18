@@ -3,46 +3,33 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
 
 // icons
-import HomeIcon from '../assets/home-icon'
-import LaunchpadList from '../assets/UpcomingProjects'
-import NewListings from '../assets/NewListings'
-import PairExplorer from '../assets/PairExplorer'
-import Info from '../assets/Info'
-import HelpCentre from '../assets/HelpCentre'
-import UpcomingProjects from '../assets/UpcomingProjects'
+import DiscoverIcon from '../assets/discoverIcon'
+import { Avatar } from '@mui/material'
+import SettingIcon from '../assets/SettingIcon'
+import { FaHouseUser } from 'react-icons/fa'
+import { MdOutlineApartment } from 'react-icons/md'
 
 const SIDEBAR_DATA = [
   {
-    name: 'Home',
-    icons: <HomeIcon />,
-    urlPath: '',
-  },
-  {
-    name: 'New Listings ',
-    icons: <NewListings />,
-    urlPath: '',
-  },
-  {
-    name: 'Upcoming Projects',
-    icons: <UpcomingProjects />,
-    urlPath: '',
-  },
-  {
-    name: 'Pair Explorer',
-    icons: <PairExplorer />,
+    name: 'Discover',
+    icons: <DiscoverIcon />,
     urlPath: '/',
   },
   {
-    name: 'Info',
-    icons: <Info />,
-    urlPath: '/apply-ido',
+    name: 'Houses',
+    icons: <FaHouseUser />,
+    urlPath: '/houses',
   },
   {
-    name: 'Help Centre',
-    icons: <HelpCentre />,
+    name: 'Apartments',
+    icons: <MdOutlineApartment />,
+    urlPath: '/apartment',
+  },
+  {
+    name: 'Settings',
+    icons: <SettingIcon />,
     urlPath: '',
   },
 ]
@@ -102,41 +89,21 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-[999999] flex h-screen w-[237px] flex-col justify-center overflow-y-hidden bg-black duration-300 ease-linear k lg:static lg:translate-x-0 ${
-        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      className={`absolute rounded-2xl left-0 top-0 z-[999999] flex h-[100vh] w-[237px] flex-col justify-center overflow-y-hidden bg-[#181818] duration-300 ease-linear lg:static lg:translate-x-0 m-2 ${
+        sidebarOpen ? 'translate-x-0' : '-translate-x-[109%]'
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className='flex items-center justify-between gap-2  py-6 px-8 w-full'>
-        <div className='relative w-full md:h-10 h-8'>
-          <Image
-            src='/images/logo_main.png'
-            alt='logo main'
-            fill
-            objectFit='contain'
+      <div className='flex items-center justify-between gap-2 py-6 px-8 w-full text-white'>
+        <div className='space-y-3 text-center flex flex-col justify-center items-center'>
+          <Avatar
+            alt='Remy Sharp'
+            src='/images/Profile Image.png'
+            sx={{ width: 92, height: 92 }}
           />
+          <h3 className='text-2xl font-semibold'>Indica Watson</h3>
+          <p className='text-[#7F7F7F]'>Real Estate Builders</p>
         </div>
-        {/* <button
-          ref={trigger}
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          aria-controls='sidebar'
-          aria-expanded={sidebarOpen}
-          className='block lg:hidden mr-5 absolute right-0 '
-        >
-          <svg
-            className='fill-current'
-            width='20'
-            height='18'
-            viewBox='0 0 20 18'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M19 8.175H2.98748L9.36248 1.6875C9.69998 1.35 9.69998 0.825 9.36248 0.4875C9.02498 0.15 8.49998 0.15 8.16248 0.4875L0.399976 8.3625C0.0624756 8.7 0.0624756 9.225 0.399976 9.5625L8.16248 17.4375C8.31248 17.5875 8.53748 17.7 8.76248 17.7C8.98748 17.7 9.17498 17.625 9.36248 17.475C9.69998 17.1375 9.69998 16.6125 9.36248 16.275L3.02498 9.8625H19C19.45 9.8625 19.825 9.4875 19.825 9.0375C19.825 8.55 19.45 8.175 19 8.175Z'
-              fill='#fff'
-            />
-          </svg>
-        </button> */}
       </div>
       {/* <!-- SIDEBAR HEADER --> */}
 
@@ -144,37 +111,32 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         className='no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear relative'
         id='scroll_none'
       >
-        <Image
-          src='/images/sildebar-Ellipse.png'
-          alt='sildebar-Ellipse'
-          width={550}
-          height={314}
-          className='absolute left-0 translate-y-28 w-full'
-        />
         {/* <!-- Sidebar Menu --> */}
-        <nav className='mt-5 py-4 lg:mb-9 '>
-          <ul className='flex flex-col gap-12'>
+        <nav className='py-4 lg:mb-9'>
+          <ul className='flex flex-col gap-0'>
             {SIDEBAR_DATA.map((item, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                className='md:mx-3 mx-0'
+              >
                 <Link
                   href={item.urlPath}
-                  className={`flex items-center px-8 py-1 gap-5 text-sm relative whitespace-nowrap ${
-                    pathname === item.urlPath ? ' text-white' : 'text-[#888490]'
+                  className={`flex items-center px-4 py-4 gap-3 text-base font-medium rounded-lg relative whitespace-nowrap ${
+                    pathname === item.urlPath
+                      ? 'text-white bg-[#030303]'
+                      : 'text-[#888490]'
                   }`}
                 >
                   <span
-                    className={` ${
+                    className={`${
                       pathname === item.urlPath
-                        ? ' text-white'
+                        ? 'text-white'
                         : 'text-[#888490]'
                     }`}
                   >
                     {item.icons}
                   </span>
                   {item.name}
-                  <span
-                    className={pathname === item.urlPath ? 'active' : ''}
-                  ></span>
                 </Link>
               </li>
             ))}
