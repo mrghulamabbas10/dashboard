@@ -2,7 +2,7 @@
 import { Button } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoChevronBackOutline } from 'react-icons/io5'
 import LoadingButton from '@mui/lab/LoadingButton'
@@ -17,6 +17,19 @@ export default function Index({ houseData }: any) {
   }
   const handleClickNew = () => {
     setNewLoading(true)
+  }
+
+  const [localStorageAvailable, setLocalStorageAvailable] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      setLocalStorageAvailable(true)
+    }
+  }, [])
+
+  // Render nothing or a fallback until we confirm localStorage is available
+  if (!localStorageAvailable) {
+    return null // You can render a loader or fallback content here
   }
 
   return (

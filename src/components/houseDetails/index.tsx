@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Button from '@mui/material/Button'
 
 import { IoChevronBackOutline } from 'react-icons/io5'
@@ -34,6 +36,19 @@ export default function Index({ houseData }: any) {
     Reference,
     slug,
   } = houseData
+
+  const [localStorageAvailable, setLocalStorageAvailable] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      setLocalStorageAvailable(true)
+    }
+  }, [])
+
+  // Render nothing or a fallback until we confirm localStorage is available
+  if (!localStorageAvailable) {
+    return null // You can render a loader or fallback content here
+  }
 
   return (
     <div className='text-black bg-white md:p-8 px-4 py-8 rounded-3xl shadow-xl mt-10'>
