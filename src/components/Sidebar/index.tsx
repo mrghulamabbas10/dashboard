@@ -95,7 +95,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         sidebarOpen ? 'translate-x-0' : '-translate-x-[109%]'
       }`}
     >
-      <h4 className='text-white ml-8 font-semibold mt-3'>DreamZ</h4>
+      <h4 className='text-white ml-8 font-semibold mt-3'>DreamZ </h4>
 
       <span
         className='md:hidden block absolute top-5 right-5 text-white text-xl cursor-pointer bg-slate-200 rounded-full bg-opacity-5'
