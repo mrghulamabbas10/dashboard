@@ -4,29 +4,21 @@ import { useState } from 'react'
 import IconButton from '@mui/material/IconButton'
 import { FaBarsStaggered } from 'react-icons/fa6'
 import { Avatar } from '@mui/material'
+import Link from 'next/link'
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined
   setSidebarOpen: (arg0: boolean) => void
 }) => {
-  const [activeTab, setActiveTab] = useState('Buy')
-
-  const tabs = ['Buy']
   return (
     <header className='md:bg-transparent bg-white  relative top-0 z-40 flex justify-between px-4  gap-5 w-full drop-shadow-1 md:px-10 py-5 '>
-      {tabs.map((tab) => (
-        <button
-          key={tab}
-          className={`pb-2 text-2xl font-bold ${
-            activeTab === tab
-              ? 'border-b-2 border-[#FF5B19] text-[#FF5B19]'
-              : 'text-[#7F7F7F] font-normal'
-          }`}
-          onClick={() => setActiveTab(tab)}
-        >
-          {tab}
-        </button>
-      ))}
+      <Link
+        href='/'
+        className={`pb-2 text-2xl font-bold border-b-2 border-[#FF5B19] text-[#FF5B19]`}
+      >
+        Buy
+      </Link>
+
       <div className='flex items-center gap-3'>
         <Avatar
           alt='Remy Sharp'

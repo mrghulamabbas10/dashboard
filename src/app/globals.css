@@ -27,7 +27,7 @@ body {
 
 
 #scroll_none::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 
 .scroll_none {

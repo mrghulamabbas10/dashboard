@@ -9,7 +9,7 @@ export default function Card({ item }: any) {
     <>
       <Link href={`/house-details/${item.slug}`}>
         <div className='bg-white border border-[#F4F4F4] rounded-2xl p-3 drop-shadow-sm'>
-          <div className='relative w-full h-[160px] rounded-2xl overflow-hidden'>
+          <div className='relative w-full lg:h-[160px] h-[200px] rounded-2xl overflow-hidden'>
             <Image
               src={item.images[0].imgPath}
               alt={item.name}

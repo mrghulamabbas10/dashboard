@@ -13,12 +13,11 @@ const LayoutForFillter: React.FC<LayoutForFilterProps> = ({ initialData }) => {
   const [activeTab, setActiveTab] = useState('Recommended')
   const [filterValues, setFilterValues] = useState<FilterValues>({
     searchTerm: '',
-    sellprice: '',
-    propertyType: '',
-    filters: '',
+    minPrice: '',
+    maxPrice: '',
+    propertyTypes: [],
   })
   const [filteredData, setFilteredData] = useState(initialData)
-  const [priceError, setPriceError] = useState<string | null>(null)
 
   const tabs = ['Recommended', 'Popular', 'Nearest']
 
@@ -31,12 +30,18 @@ const LayoutForFillter: React.FC<LayoutForFilterProps> = ({ initialData }) => {
     const filteredResults = initialData.filter((item) => {
       const itemPrice = parsePrice(item.price)
 
-      if (filterValues.sellprice && isNaN(parsePrice(filterValues.sellprice))) {
-        setPriceError('Invalid price')
-        return false
-      } else {
-        setPriceError(null)
-      }
+      const minPrice = filterValues.minPrice
+        ? parsePrice(filterValues.minPrice)
+        : 0
+      const maxPrice = filterValues.maxPrice
+        ? parsePrice(filterValues.maxPrice)
+        : Infinity
+
+      const priceIsValid = itemPrice >= minPrice && itemPrice <= maxPrice
+
+      const propertyTypeIsValid = filterValues.propertyTypes.length
+        ? filterValues.propertyTypes.includes(item.type)
+        : true
 
       return (
         (filterValues.searchTerm
@@ -44,15 +49,8 @@ const LayoutForFillter: React.FC<LayoutForFilterProps> = ({ initialData }) => {
               .toLowerCase()
               .includes(filterValues.searchTerm.toLowerCase())
           : true) &&
-        (filterValues.sellprice
-          ? itemPrice <= parsePrice(filterValues.sellprice)
-          : true) &&
-        (filterValues.propertyType
-          ? item.type === filterValues.propertyType
-          : true) &&
-        (filterValues.filters
-          ? item.filters.includes(filterValues.filters)
-          : true)
+        priceIsValid &&
+        propertyTypeIsValid
       )
     })
 
@@ -96,8 +94,8 @@ const LayoutForFillter: React.FC<LayoutForFilterProps> = ({ initialData }) => {
         ))}
       </div>
       <div className='grid md:grid-cols-12 col-span-1 mt-5 gap-3'>
-        <div className='md:col-span-9 col-span-full'>
-          <div className='grid md:grid-cols-3 grid-cols-1 gap-3'>
+        <div className='lg:col-span-9 col-span-full'>
+          <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3'>
             {filteredData.map((item, idx) => (
               <Card
                 key={idx}
@@ -106,7 +104,7 @@ const LayoutForFillter: React.FC<LayoutForFilterProps> = ({ initialData }) => {
             ))}
           </div>
         </div>
-        <div className='md:col-span-3 col-span-full'>
+        <div className='lg:col-span-3 col-span-full'>
           <Map />
         </div>
       </div>

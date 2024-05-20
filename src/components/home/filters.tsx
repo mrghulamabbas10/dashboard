@@ -11,12 +11,13 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import FilterPopup from './filterPopup'
+import { IoMdClose } from 'react-icons/io'
 
 export interface FilterValues {
   searchTerm: string
-  sellprice: string
-  propertyType: string
-  filters: string
+  minPrice: string
+  maxPrice: string
+  propertyTypes: string[]
 }
 
 interface FiltersProps {
@@ -34,9 +35,9 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
     setSearchTerm(e.target.value)
     onFilterChange({
       searchTerm: e.target.value,
-      sellprice,
-      propertyType,
-      filters,
+      minPrice: sellprice,
+      maxPrice: '',
+      propertyTypes: propertyType ? [propertyType] : [],
     })
   }
 
@@ -44,9 +45,9 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
     setPrice(e.target.value)
     onFilterChange({
       searchTerm,
-      sellprice: e.target.value,
-      propertyType,
-      filters,
+      minPrice: e.target.value,
+      maxPrice: '',
+      propertyTypes: propertyType ? [propertyType] : [],
     })
   }
 
@@ -54,9 +55,9 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
     setPropertyType(e.target.value)
     onFilterChange({
       searchTerm,
-      sellprice,
-      propertyType: e.target.value,
-      filters,
+      minPrice: sellprice,
+      maxPrice: '',
+      propertyTypes: e.target.value ? [e.target.value] : [],
     })
   }
 
@@ -66,6 +67,14 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
 
   const handleClose = () => {
     setOpen(false)
+  }
+
+  const handlePopupFilterChange = (filters: FilterValues) => {
+    setSearchTerm(filters.searchTerm)
+    setPrice(filters.minPrice)
+    setPropertyType(filters.propertyTypes.join(', '))
+    setFilters(filters as any)
+    onFilterChange(filters)
   }
 
   return (
@@ -129,13 +138,13 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
             <option value='Apartment'>Apartment</option>
           </select>
           <span className='absolute top-3 right-4'>
-            <IoChevronDown style={{ color: '#B7BFC5', fontSize: 24 }} />
+            <IoChevronDown style={{ color: '#B7BFC5', fontSize: 20 }} />
           </span>
         </div>
         <div className='md:w-auto w-full'>
           <button
             onClick={handleClickOpen}
-            className='md:w-[200px] w-full flex items-center justify-between  border border-gray-300 text-[#B7BFC5] text-sm py-3 px-5 rounded-full'
+            className='md:w-[200px] w-full flex items-center justify-between border border-gray-300 text-[#B7BFC5] text-sm py-3 px-5 rounded-full'
           >
             Filters
             <FiltersIcon />
@@ -150,14 +159,23 @@ const Filters: React.FC<FiltersProps> = ({ onFilterChange }) => {
           aria-describedby='alert-dialog-description'
           maxWidth='sm'
           fullWidth
-          sx={{ mx: 'auto' }}
+          id='scroll_none'
         >
+          <span
+            className='absolute top-5 right-5 text-textPrimary text-2xl'
+            onClick={handleClose}
+          >
+            <IoMdClose />
+          </span>
           <DialogTitle id='alert-dialog-title'>
-            <h3 className='text-[#181818] text-center font-bold f'>Filters</h3>
+            <h3 className='text-[#181818] text-center font-bold'>Filters</h3>
           </DialogTitle>
           <DialogContent>
-            <DialogContentText id='alert-dialog-description'>
-              <FilterPopup />
+            <DialogContentText>
+              <FilterPopup
+                onFilterChange={handlePopupFilterChange}
+                onClose={handleClose}
+              />
             </DialogContentText>
           </DialogContent>
         </Dialog>

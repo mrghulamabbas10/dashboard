@@ -1,11 +1,24 @@
+'use client'
+import { Button } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoChevronBackOutline } from 'react-icons/io5'
+import LoadingButton from '@mui/lab/LoadingButton'
 
 export default function Index({ houseData }: any) {
+  const [loading, setloading] = useState(false)
+  const [newLoading, setNewLoading] = useState(false)
   const { images, name, sellprice, location } = houseData
+
+  const handleClick = () => {
+    setloading(true)
+  }
+  const handleClickNew = () => {
+    setNewLoading(true)
+  }
+
   return (
     <div className='text-black bg-white md:p-8 px-4 py-8 rounded-3xl shadow-xl mt-10'>
       <Link
@@ -28,9 +41,9 @@ export default function Index({ houseData }: any) {
           </p>
         </div>
       </div>
-      <div className='grid md:grid-cols-12 grid-cols-1 mt-5 gap-5'>
-        <div className='md:col-span-7 col-span-full'>
-          <div className='relative w-full h-[570px] rounded-2xl overflow-hidden'>
+      <div className='grid lg:grid-cols-12 grid-cols-1 mt-5 gap-5'>
+        <div className='lg:col-span-7 col-span-full'>
+          <div className='relative w-full md:h-[570px] h-[300px] rounded-2xl overflow-hidden'>
             <Image
               src={images[0].imgPath}
               alt={name}
@@ -41,10 +54,10 @@ export default function Index({ houseData }: any) {
             />
           </div>
         </div>
-        <div className='md:col-span-5 col-span-full'>
+        <div className='lg:col-span-5 col-span-full'>
           <h4 className='text-[21px] font-semibold'>Purchase Summary</h4>
-          <div className='border border-[#D2D3D8] p-6 rounded-xl'>
-            <div className='grid md:grid-cols-4 grid-cols-2'>
+          <div className='border border-[#D2D3D8] p-6 rounded-xl mt-5'>
+            <div className='grid md:grid-cols-4 grid-cols-2 gap-3'>
               <div className='space-y-5 flex flex-col'>
                 <h3 className='texr-[11px] '>Square</h3>
                 <p className='text-[15px] text-[#181818] font-semibold'>
@@ -120,13 +133,11 @@ export default function Index({ houseData }: any) {
             <div className='relative mt-2 w-full'>
               <select
                 id='countries'
-                className='relative  w-full bg-gray-50 border border-gray-300 text-[#B7BFC5] text-sm  py-4 pl-6 pr-16 rounded-md outline-none'
+                className='relative  w-full bg-gray-50 border border-gray-300 text-textPrimary text-sm  py-4 pl-6 pr-16 rounded-md outline-none'
               >
-                <option selected>Bitcoin</option>
-                <option value='US'>United States</option>
-                <option value='CA'>Canada</option>
-                <option value='FR'>France</option>
-                <option value='DE'>Germany</option>
+                <option selected>Solana</option>
+                <option value='eth'>Ethereum</option>
+                <option value='bit'>Bitcoin</option>
               </select>
               <span className='absolute top-3 right-4'>
                 <svg
@@ -151,15 +162,29 @@ export default function Index({ houseData }: any) {
                 </p>
               </div>
               <div>
-                <button className='bg-[#1DE3D3] py-3 w-full rounded font-semibold '>
+                <LoadingButton
+                  variant='contained'
+                  sx={{ bgcolor: '#1DE3D3 !important' }}
+                  className='bg-[#1DE3D3] py-3 w-full rounded font-semibold '
+                  size='medium'
+                  onClick={handleClick}
+                  loading={loading}
+                >
                   Connect Wallet
-                </button>
+                </LoadingButton>
               </div>
             </div>
           </div>
-          <button className='bg-[#1DE3D3] py-3 w-full rounded font-semibold mt-5 '>
+          <LoadingButton
+            variant='contained'
+            sx={{ bgcolor: '#1DE3D3 !important', mt: 3, py: 1 }}
+            className='bg-[#1DE3D3] py-3 w-full rounded font-semibold mt-5 '
+            loading={newLoading}
+            onClick={handleClickNew}
+            size='large'
+          >
             Checkout
-          </button>
+          </LoadingButton>
         </div>
       </div>
     </div>

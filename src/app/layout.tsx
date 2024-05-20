@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Quicksand } from 'next/font/google'
 import './globals.css'
 import DefaultLayout from '@/components/Layouts/DefaultLayout'
+import { ThemeProvider } from '@mui/material'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
+import theme from '@/components/theme'
 
 const quicksand = Quicksand({
   weight: ['300', '400', '500', '600', '700'],
@@ -23,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={quicksand.className}>
-        <DefaultLayout>{children}</DefaultLayout>
+        <ThemeProvider theme={theme}>
+          <DefaultLayout>{children}</DefaultLayout>
+        </ThemeProvider>
       </body>
     </html>
   )

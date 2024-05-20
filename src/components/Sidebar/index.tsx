@@ -11,6 +11,7 @@ import SettingIcon from '../assets/SettingIcon'
 import { FaHouseUser } from 'react-icons/fa'
 import { MdOutlineApartment } from 'react-icons/md'
 import { IoMdCloseCircleOutline } from 'react-icons/io'
+import Image from 'next/image'
 
 const SIDEBAR_DATA = [
   {
@@ -94,6 +95,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         sidebarOpen ? 'translate-x-0' : '-translate-x-[109%]'
       }`}
     >
+      <h4 className='text-white ml-8 font-semibold mt-3'>DreamZ</h4>
+
       <span
         className='md:hidden block absolute top-5 right-5 text-white text-xl cursor-pointer bg-slate-200 rounded-full bg-opacity-5'
         onClick={(e) => {
@@ -103,7 +106,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <IoMdCloseCircleOutline />
       </span>
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className='flex items-center justify-between gap-2 py-6 px-8 w-full text-white'>
+      <div className='flex items-center justify-between gap-2 py-6 px-8 w-full text-white mt-5'>
         <div className='space-y-3 text-center flex flex-col justify-center items-center'>
           <Avatar
             alt='Remy Sharp'
@@ -111,7 +114,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             sx={{ width: 92, height: 92 }}
           />
           <h3 className='text-2xl font-semibold'>Indica Watson</h3>
-          <p className='text-[#7F7F7F]'>Real Estate Builders</p>
         </div>
       </div>
       {/* <!-- SIDEBAR HEADER --> */}
@@ -153,6 +155,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           </ul>
         </nav>
         {/* <!-- Sidebar Menu --> */}
+      </div>
+      <div className='mx-auto'>
+        <Link href='/'>
+          <Image
+            src='/images/logo.png'
+            alt='lgog'
+            width={100}
+            height={100}
+          />
+        </Link>
       </div>
     </aside>
   )

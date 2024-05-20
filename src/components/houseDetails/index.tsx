@@ -56,9 +56,9 @@ export default function Index({ houseData }: any) {
           </Link>
         </div>
       </div>
-      <div className='grid md:grid-cols-2 grid-cols-1 gap-2 mt-10'>
+      <div className='grid lg:grid-cols-2 grid-cols-1 gap-2 mt-10'>
         <div className=''>
-          <div className='relative w-full h-[421px] rounded-xl overflow-hidden'>
+          <div className='relative w-full md:h-[421px] h-[300px] rounded-xl overflow-hidden'>
             <Image
               src={images[0].imgPath}
               alt=''
@@ -115,8 +115,8 @@ export default function Index({ houseData }: any) {
         </div>
       </div>
       {/* title  */}
-      <div className='grid md:grid-cols-12 grid-cols-1 gap-5 mt-7 '>
-        <div className='md:col-span-8 col-span-full'>
+      <div className='grid lg:grid-cols-12 grid-cols-1 lg:gap-5 gap-8 mt-7 '>
+        <div className='lg:col-span-8 col-span-full'>
           <div className='space-y-3'>
             <h2 className='font-semibold text-3xl text-[#181818] text-nowrap overflow-hidden text-ellipsis'>
               {name}
@@ -192,30 +192,30 @@ export default function Index({ houseData }: any) {
             </div>
           </div>
         </div>
-        <div className='md:col-span-4 col-span-full'>
+        <div className='lg:col-span-4 col-span-full '>
           <div className='bg-[#181818] rounded-2xl p-5 text-white'>
             <h2 className='font-semibold text-2xl text-nowrap overflow-hidden text-ellipsis'>
               Go Tour this Home
             </h2>
             <div className='flex md:flex-nowrap flex-wrap gap-2 mt-2'>
-              <div className='bg-[#EE7953] px-3 py-3 rounded-full text-[12px]'>
+              <div className='bg-[#EE7953] px-3 py-3 rounded-full text-[12px] text-center lg:w-auto w-full'>
                 Tour in person
               </div>
-              <div className='border border-[#FFFFFF66] tetx-[#FFFFFF66] px-3 py-3 rounded-full text-[12px]'>
+              <div className='border border-[#FFFFFF66] lg:w-auto w-full text-center text-[#FFFFFF66] px-3 py-3 rounded-full text-[12px]'>
                 Tour via video chat
               </div>
             </div>
-            <div className='flex md:flex-nowrap flex-wrap gap-2 mt-5'>
-              <div className=' bg-[#53FFF1] text-[#181818] text-lg px-3.5 py-3 rounded-xl  text-center flex flex-col justify-center items-center gap-2'>
+            <div className='flex flex-nowrap  gap-2 mt-5'>
+              <div className=' bg-[#53FFF1] w-full text-[#181818] text-lg px-3.5 py-3 rounded-xl  text-center flex flex-col justify-center items-center gap-2'>
                 <p className='font-medium text-[#181818] '>Friday</p>
                 <b className='text-[58px] text-[#181818]'>8</b>
                 <p className='font-medium text-[#181818]'>Feb</p>
               </div>
-              <div className=' border border-[#FFFFFF]   text-lg px-3 py-3 rounded-xl   flex flex-col justify-end items-center gap-2'>
+              <div className=' border border-[#FFFFFF] w-full   text-lg px-3 py-3 rounded-xl   flex flex-col justify-end items-center gap-2'>
                 <b className='text-[58px] text-gray my-2'>17</b>
                 <p className='font-medium '>Feb</p>
               </div>
-              <div className='border border-[#FFFFFF]  text-lg px-3 py-3 rounded-xl   flex flex-col justify-end items-center gap-2'>
+              <div className='border border-[#FFFFFF] w-full text-lg px-3 py-3 rounded-xl   flex flex-col justify-end items-center gap-2'>
                 <b className='text-[58px] text-gray my-2'>27</b>
                 <p className='font-medium '>Feb</p>
               </div>
@@ -225,7 +225,7 @@ export default function Index({ houseData }: any) {
                 <HiOutlineArrowSmRight />
                 Schedule Tour
               </button>
-              <button className='text-sm text-[#FFFFFF]'>
+              <button className='text-sm text-[#FFFFFF] text-center mx-auto'>
                 It’s free, with no obligation - cancel anytime.
               </button>
             </div>
