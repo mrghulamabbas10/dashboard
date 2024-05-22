@@ -25,10 +25,6 @@ const Header = (props: {
           src='/images/Profile Image.png'
           sx={{ width: 50, height: 50 }}
         />
-        <div>
-          <h3 className='text-lg font-semibold'>Indica Watson</h3>
-          <p className='text-[#7F7F7F] text-[12px]'>Real Estate Builders</p>
-        </div>
         <div className='lg:hidden'>
           <IconButton
             aria-controls='sidebar'
