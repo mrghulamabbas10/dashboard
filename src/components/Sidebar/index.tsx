@@ -11,6 +11,9 @@ import SettingIcon from '../assets/SettingIcon'
 import { FaHouseUser } from 'react-icons/fa'
 import { MdOutlineApartment } from 'react-icons/md'
 import { IoMdCloseCircleOutline } from 'react-icons/io'
+import { FaXTwitter } from 'react-icons/fa6'
+import { BiLogoTelegram } from 'react-icons/bi'
+
 import Image from 'next/image'
 
 const SIDEBAR_DATA = [
@@ -29,11 +32,11 @@ const SIDEBAR_DATA = [
     icons: <MdOutlineApartment />,
     urlPath: '/apartment',
   },
-  {
-    name: 'Settings',
-    icons: <SettingIcon />,
-    urlPath: '',
-  },
+  // {
+  //   name: 'Settings',
+  //   icons: <SettingIcon />,
+  //   urlPath: '',
+  // },
 ]
 
 interface SidebarProps {
@@ -91,11 +94,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute rounded-2xl left-0 top-0 z-50 flex h-[100vh] w-[237px] flex-col justify-between items-center py-10 overflow-y-hidden bg-[#181818] duration-300 ease-linear lg:static lg:translate-x-0 m-2 ${
+      className={`absolute rounded-2xl left-0 top-0 z-50 flex h-[100vh] w-[237px] flex-col gap-20 items-center py-10 overflow-y-hidden bg-[#181818] duration-300 ease-linear lg:static lg:translate-x-0 m-2 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-[109%]'
       }`}
     >
-      <div className='mx-auto'>
+      <div className='mx-auto flex flex-col justify-center items-center'>
         <Link
           href='/'
           className='cursor-pointer'
@@ -107,6 +110,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             height={100}
           />
         </Link>
+        <div className='flex items-center gap-3'>
+          <Link
+            href=''
+            className='bg-white rounded-full p-2 hover:bg-gray hover:text-white trasnsetion-all'
+          >
+            <FaXTwitter />
+          </Link>
+          <Link
+            href=''
+            className='bg-white rounded-full p-2 hover:bg-gray hover:text-white trasnsetion-all'
+          >
+            <BiLogoTelegram />
+          </Link>
+        </div>
       </div>
 
       <span
@@ -156,10 +173,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         </nav>
         {/* <!-- Sidebar Menu --> */}
       </div>
-      <div>
+      {/* <div>
         <p className='text-[#7F7F7F] text-sm'>Don’t have an account? </p>
         <h3 className='text-white font-bold cursor-pointer'>Sign Up</h3>
-      </div>
+      </div> */}
     </aside>
   )
 }

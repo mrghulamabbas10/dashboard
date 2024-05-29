@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoChevronBackOutline } from 'react-icons/io5'
 import LoadingButton from '@mui/lab/LoadingButton'
+import AlertDialog from './popup'
 
 export default function Index({ houseData }: any) {
   const [loading, setloading] = useState(false)
@@ -148,9 +149,7 @@ export default function Index({ houseData }: any) {
                 id='countries'
                 className='relative  w-full bg-gray-50 border border-gray-300 text-textPrimary text-sm  py-4 pl-6 pr-16 rounded-md outline-none'
               >
-                <option selected>Solana</option>
-                <option value='eth'>Ethereum</option>
-                <option value='bit'>Bitcoin</option>
+                <option selected>USDT</option>
               </select>
               <span className='absolute top-3 right-4'>
                 <svg
@@ -188,16 +187,7 @@ export default function Index({ houseData }: any) {
               </div>
             </div>
           </div>
-          <LoadingButton
-            variant='contained'
-            sx={{ bgcolor: '#1DE3D3 !important', mt: 3, py: 1 }}
-            className='bg-[#1DE3D3] py-3 w-full rounded font-semibold mt-5 '
-            loading={newLoading}
-            onClick={handleClickNew}
-            size='large'
-          >
-            Checkout
-          </LoadingButton>
+          <AlertDialog />
         </div>
       </div>
     </div>
